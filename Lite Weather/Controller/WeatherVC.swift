@@ -47,6 +47,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate
                 if success == true {
                     self.cityLbl.text = WeatherDataModel.instance.city
                     self.tempLbl.text = "\(WeatherDataModel.instance.temperature)°"
+                    self.weatherIcon.image = UIImage(named: WeatherDataModel.instance.weatherIconName)
                 }else {
                     self.cityLbl.text = "Connection Problem"
                 }
@@ -67,6 +68,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate
             if success == true {
                 self.cityLbl.text = WeatherDataModel.instance.city
                 self.tempLbl.text = "\(WeatherDataModel.instance.temperature) °"
+                self.weatherIcon.image = UIImage(named: WeatherDataModel.instance.weatherIconName)
             }else {
                 self.cityLbl.text = "Connection Problem"
             }

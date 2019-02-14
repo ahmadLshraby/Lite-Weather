@@ -24,6 +24,7 @@ class API: NSObject {
                 WeatherDataModel.instance.temperature = Int(tempResult - 273.15)
                 WeatherDataModel.instance.city = json["name"].stringValue
                 WeatherDataModel.instance.condition = json["weather"][0]["id"].intValue
+                print(WeatherDataModel.instance.condition)
                 WeatherDataModel.instance.weatherIconName = WeatherDataModel.instance.updateWeatherIcon(condition: WeatherDataModel.instance.condition)
                 completion(true)
                 print(json)
